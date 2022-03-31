@@ -1,0 +1,14 @@
+#cloud-config
+users:
+  - name: root
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC11bwhq4ffJ/6jsNgv1Om/7Dqv6+UN7eWMYBab2xO8Wxv/3S5ga4GNuL9Y4bSURf2xMVocp9VvIRnwx1WDayMnmyFGuI+woo7PYtQufsTgH7dyp8WwrBIfdugVSn4Trp5cj54gyXlPyDcZbHNA6NcCerCyppprqtX4wdK2NBShwnpDG/JJIYz2sdy54z9vhSeYHDLO5WiYIpXIZvACIfhvwuEeNGAsBp3E7p2L/tWqyOORIsEyygN32gTy0DH6JMArNoL585KPQ174HAbrfv6SE9npg40jl1NsfH6d6rLF5UharWid7N1P2JaXCxbAojxYem86RkPHl8e3D7QuAWyRG7iBy1xAys+XXC5mfZ930H92tI8loawNPWRj55NAsMUykpYRbk8U7fgO7tUMgKOAF0tAm7f76uoOipxvd2+T6GPUsW7bBxZB9G2qaP933P2R8BZHGS3l2eFzEE5AAqI4OFJiLJvbCJJ7TtOP8/wVlaWXjRrlQcho9sHXYg5wn2s= root@ubuntu1
+
+
+runcmd:
+  - yum -y install firewalld
+  - service firewalld start 
+  
